@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Test sourceURL</title>
+  </head>
+  <script>
+    console.log("Should see two errors, one from script-0.js and one from script-1.js");
+
+    function f() {
+      var s;
+      s = document.createElement('script');
+      s.textContent = `x.y.z = a.b.c;\n//# sourceURL=script-0.js\n`;
+      document.body.appendChild(s);
+
+      s = document.createElement('script');
+      s.textContent = `x.y.z = a.b.c;\n//# sourceURL=script-1.js\n`;
+      document.body.appendChild(s);
+    }
+  </script>
+  <body onload="f()">
+    <div>Look at the console</div>
+    <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1192882">From bug 1192882</a>
+  </body>
+</html>
