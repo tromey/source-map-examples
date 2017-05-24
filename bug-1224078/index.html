@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Test case from Bug 1224078</title>
+  </head>
+  <body>
+    <div> Test case from <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1224078">Bug 1224078</a>.  Look at the
+    console to see that each log comes from a different file, and then
+    open the debugger to see that the files exist.</div>
+
+    <script>
+      // test-1: dynamic script tag  (fails)
+      var head = document.head;
+      var script = document.createElement('script');
+      script.text =
+        "function x1() {" +
+        "  console.log('called foo 1');" +
+        "}" +
+        "x1();//# sourceURL=test-1.js";
+      head.appendChild(script);
+      head.removeChild(script);
+    </script>
+    <script>
+      // test-2: new Function (works)
+      new Function(
+        "function x2() {" +
+        "  console.log('called foo 2');" +
+        "}" +
+        "x2();//# sourceURL=test-2.js"
+      ).call(window);
+    </script>
+    <script>
+      // test-3: eval (works)
+      eval(
+        "function x3() {" +
+        "  console.log('called foo 3');" +
+        "}" +
+        "x3();//# sourceURL=test-3.js"
+      );
+    </script>
+
+  </body>
+</html>
