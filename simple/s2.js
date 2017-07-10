@@ -6,3 +6,8 @@ function clickme() {
 }
 
 window.clickme = clickme;
+
+window.loaded = function() {
+  let b = document.getElementById("button");
+  b.addEventListener("click", clickme);
+};
