@@ -1,6 +1,6 @@
 {
 "version": 3,
-"mappings": "AAAA,IAAK;EAMH,gBAAgB,EAAE,gLAAuK;EALzL,QAAI;IACF,KAAK,EAAE,MAAM;IACb,KAAK,EAAE,OAAO",
+"mappings": "CAAA,GAAK,EAOH,eAAgB,EAAE,sKAAuK,EANzL,OAAI,EACF,IAAK,EAAE,KAAM,EACb,KAAM,EAAE,UAAW,EACnB,IAAK,EAAE,MAAO",
 "sources": ["ta.scss"],
 "names": [],
 "file": "ta.css"

@@ -1,0 +1,3 @@
+The .css file was created with
+
+    sass -t compressed ta.scss ta.css
