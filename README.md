@@ -1,5 +1,8 @@
 Some source map example pages, for testing the Firefox DevTools.
 
+Note that not all of these work.  You can see most of the open bugs by
+following dependencies from [the source map meta bug](https://bugzilla.mozilla.org/show_bug.cgi?id=1339970).
+
 Find them [here](https://tromey.github.io/source-map-examples/)
 
 * [Simple webpack example](simple/index.html)
