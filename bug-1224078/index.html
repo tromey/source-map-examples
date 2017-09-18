@@ -19,16 +19,16 @@
         "}" +
         "x1();//# sourceURL=test-1.js";
       head.appendChild(script);
-      head.removeChild(script);
     </script>
     <script>
       // test-2: new Function (works)
-      new Function(
+      window.x2 = new Function(
         "function x2() {" +
         "  console.log('called foo 2');" +
         "}" +
         "x2();//# sourceURL=test-2.js"
-      ).call(window);
+      );
+      window.x2.call(window);
     </script>
     <script>
       // test-3: eval (works)
