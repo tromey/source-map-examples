@@ -5,7 +5,7 @@
     <title>Test sourceURL</title>
   </head>
   <script>
-    console.log("Should see two errors, one from script-0.js and one from script-1.js");
+    console.log("Should see three errors, one from script-0.js, one from script-1.js, and one from script-2.js; the final one should also mention the correct URL in the stack trace");
 
     function f() {
       var s;
@@ -15,6 +15,14 @@
 
       s = document.createElement('script');
       s.textContent = `x.y.z = a.b.c;\n//# sourceURL=script-1.js\n`;
+      document.body.appendChild(s);
+
+      s = document.createElement('script');
+      s.textContent = `
+        function a() { throw new Error("here"); }
+        function b() { a(); }
+        function c() { b(); }
+        c(); //# sourceURL=script-2.js\n`;
       document.body.appendChild(s);
     }
   </script>
