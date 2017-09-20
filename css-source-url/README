@@ -1,2 +1,0 @@
-Use sass to compile the .scss file, then copy the .css file into the
-.html file; and finally remove the .css.
