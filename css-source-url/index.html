@@ -7,11 +7,14 @@
     body{background-image:linear-gradient(45deg, rgba(255,255,255,0.2) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0.2) 75%, transparent 75%, transparent)}body div{color: orange; color: octopus; }
 /*# sourceURL=ta.css */
   </style>
+  <style>
+    body{background-color: seagreen; background-color: octopus; }
+    /*# sourceURL=tb.css */
+  </style>
 </head>
 <body>
   <div id="something">inspect this element</div>
-  <div> It should claim to come from "ta.css".  Also there should be a
-  CSS warning in the console, which should also mention
-  "ta.css".  </div>
+  <div> It should claim to come from "ta.css".  Also there should be two
+  CSS warnings in the console, coming from "ta.css" and "tb.css".  </div>
 </body>
 </html>
