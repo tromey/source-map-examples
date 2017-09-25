@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Test sourceURL</title>
+  </head>
+  <script src="bundle.js"></script>
+  <body onload="loaded();">
+    <div> Simple webpack source-map test </div>
+    <button type="button" id="button">Click me and look at the console</button>
+    <div> It should not matter if the console is opened first or if
+      the button is clicked first -- try it both ways. </div>
+    <div> You can also inspect the button to see whether the event
+      popup is correctly source-mapped. </div>
+  </body>
+</html>
